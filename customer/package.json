@@ -1,8 +1,8 @@
 {
-  "name": "user",
+  "name": "customer",
   "private": true,
   "scripts": {
-    "start": "PORT=8002 umi dev",
+    "start": "PORT=8001 umi dev",
     "build": "umi build",
     "lint": "eslint --ext .js .",
     "slint": "stylelint src/**/*.less",

@@ -1,8 +1,9 @@
 {
-  "name": "user",
+  "name": "fangzhou",
+  "description": "方舟工作台",
   "private": true,
   "scripts": {
-    "start": "PORT=8002 umi dev",
+    "start": "PORT=8000 umi dev",
     "build": "umi build",
     "lint": "eslint --ext .js .",
     "slint": "stylelint src/**/*.less",
@@ -60,7 +61,6 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^3.0.0",
-    "babel-eslint": "^10.1.0",
-    "mockjs": "^1.1.0"
+    "babel-eslint": "^10.1.0"
   }
 }

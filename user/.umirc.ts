@@ -12,4 +12,5 @@ export default defineConfig({
     { path: '/', component: '@/pages/userList' },
     { path: '/:userId', component: '@/pages/userDetail' },
   ],
+  outputPath: 'build'
 });

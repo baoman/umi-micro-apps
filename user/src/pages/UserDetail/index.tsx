@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useRequest, request, Link } from 'umi';
 import { Descriptions, Modal, Breadcrumb } from 'antd';
+import User from '../../common/domains/user/entities/user';
 
 export default ({ match }: any) => {
+  const user = new User();
   const { userId } = match.params;
   const { data = {} } = useRequest(() => request(`/api/user/detail?id=${userId}`));
 
@@ -22,7 +24,8 @@ export default ({ match }: any) => {
         <Descriptions.Item label="名称">{data.name}</Descriptions.Item>
         <Descriptions.Item label="地址">{data.address}</Descriptions.Item>
         <Descriptions.Item label="入职时间">{data.create}</Descriptions.Item>
-        <Descriptions.Item label="年龄">{data.year}</Descriptions.Item>
+        <Descriptions.Item label="所属类型"><span style={{ color: 'red' }}>{user.getUserType(data.type)}</span></Descriptions.Item>
+        <Descriptions.Item label="所属部门"><span style={{ color: 'red' }}>{user.getUserDept(data.dept)}</span></Descriptions.Item>
         <Descriptions.Item label="操作"><a onClick={() => { setVisible(true) }}>设置</a></Descriptions.Item>
       </Descriptions>
 

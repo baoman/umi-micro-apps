@@ -1,10 +1,11 @@
 import React from 'react';
 import { useRequest, request, Link, connectMaster } from 'umi';
 import { Table } from 'antd';
-
+import User from '../../common/domains/user/entities/user';
 const UserList = (props: any) => {
-  const { shopId } = props;
-  const { data = [] } = useRequest(() => request(`/api/user/list?shopId=${shopId}`));
+  const { customerId } = props;
+  const user = new User();
+  const { data = [] } = useRequest(() => request(`/api/user/list?customerId=${customerId}`));
 
   const columns = [
     {
@@ -18,6 +19,11 @@ const UserList = (props: any) => {
     {
       dataIndex: 'address',
       title: '住址',
+    },
+    {
+      dataIndex: 'type',
+      title: '类型',
+      render: (type: number) => <span style={{color: 'red'}}>{user.getUserType(type)}</span>
     },
     {
       dataIndex: 'id',
