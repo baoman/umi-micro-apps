@@ -8,10 +8,18 @@ export default defineConfig({
     master: {
       apps: [{
         name: 'customer',
-        entry: 'http://localhost:8001'
+        entry: 'http://localhost:8001',
+        props: {
+          loginFetch: () => { },
+          name: 'xx'
+        },
       }, {
         name: 'user',
-        entry: 'http://localhost:8002'
+        entry: 'http://localhost:8002',
+        props: {
+          loginFetch: () => { },
+          name: 'xx'
+        },
       }],
       prefetch: 'all'
     },
